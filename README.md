@@ -17,3 +17,16 @@ Controls:
 - Use item: O
 
 The Doc was made by the students.
+
+## Build
+
+### Linux
+
+- ArchLinux Requirements: `openal` `cmake` `make` `g++`
+
+```bash
+mkdir build
+cd build
+cmake ..
+make
+```

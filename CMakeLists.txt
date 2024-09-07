@@ -1,21 +1,23 @@
 cmake_minimum_required(VERSION 3.23)
-project(arcade_marioKart)
+
+set(PROJECT_NAME arcade_marioKart)
+project(${PROJECT_NAME})
 
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_EXE_LINKER_FLAGS "-static")
 
 file( GLOB SRC src/*.cpp src/Menu/*.cpp src/SFML/*.cpp src/marioKart/*.cpp)
 file (GLOB HEADERS src/*.hpp src/Menu/*.hpp src/SFML/*.hpp src/marioKart/*.hpp)
 
-add_executable(arcade_marioKart
+add_executable(${PROJECT_NAME}
         ${SRC}
         ${HEADERS}
 )
 
-set(SFML_STATIC_LIBRARIES TRUE)
-set(SFML_DIR C:/SFML/lib/cmake/SFML)
-find_package(SFML COMPONENTS system window graphics audio network REQUIRED)
+include(build-SFML.cmake)
 
-include_directories(C:/SFML/include)
-target_link_libraries(arcade_marioKart sfml-system sfml-window sfml-graphics sfml-audio sfml-network)
-
+add_custom_command(
+        TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy
+        "${CMAKE_SOURCE_DIR}/assets/neon_pixel-7.ttf"
+        "${CMAKE_BINARY_DIR}/assets/neon_pixel-7.ttf"
+)
