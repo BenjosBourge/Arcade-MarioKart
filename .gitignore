@@ -1,0 +1,14 @@
+arcade
+cmake-build-debug
+*.o
+.idea
+*.so
+scores
+.ninja_log
+.ninja_deps
+.cmake
+cmake_install.cmake
+build.ninja
+CMakeCache.txt
+*.exe
+CMakeFiles
