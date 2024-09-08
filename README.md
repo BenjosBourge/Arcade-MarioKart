@@ -1,4 +1,6 @@
 --Mario Kart - School Project--
+
+
 This is a school project initially developed on Linux, featuring a Mario Kart-inspired game. It was part of a larger framework where multiple games, each created by a different student, could be dynamically loaded via shared libraries. However, for this version, I’ve stripped it down to only include my game (Mario Kart) and ported it to Windows.
 
 The original project had a multiplayer mode, but this version is single-player.
@@ -17,6 +19,8 @@ Controls:
 - Use item: O
 
 The Doc was made by the students.
+
+Special thanks to Xavier Mitault for the cmake improvements !
 
 ## Build
 
